@@ -1,23 +1,25 @@
-import React, { Component } from 'react';
-import './app.css';
-import ReactImage from './react.png';
+import React from 'react';
+import { Provider } from 'react-redux';
+import styled from 'styled-components';
+import store from './redux/store';
+import LettersContainer from './containers/LettersContainer';
+import HeaderContainer from './containers/HeaderContainer';
+import FooterContainer from './containers/FooterContainer';
 
-export default class App extends Component {
-  state = { username: null };
+const Wrapper = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+`;
 
-  componentDidMount() {
-    fetch('/api/getUsername')
-      .then(res => res.json())
-      .then(user => this.setState({ username: user.username }));
-  }
+const App = () => (
+  <Provider store={store}>
+    <Wrapper>
+      <HeaderContainer />
+      <LettersContainer />
+      <FooterContainer />
+    </Wrapper>
+  </Provider>
+);
 
-  render() {
-    const { username } = this.state;
-    return (
-      <div>
-        {username ? <h1>{`Hello ${username}`}</h1> : <h1>Loading.. please wait!</h1>}
-        <img src={ReactImage} alt="react" />
-      </div>
-    );
-  }
-}
+export default App;
