@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { changeText } from '../redux/actions';
+import { string } from 'prop-types';
 import Title from '../components/title/Title';
 import Subtitle from '../components/Subtitle/Subtitle';
-import { string } from 'prop-types';
 
 const StyledHeader = styled.header`
     width: 100%;
@@ -23,7 +22,7 @@ const StyledHeader = styled.header`
 
 const Header = ({ text }) => (
   <StyledHeader>
-    <Title text={text} />
+    <Title text={text || 'Good afternoon!'} />
     <Subtitle text="It looks like you have new messages..." />
   </StyledHeader>
 );
@@ -36,8 +35,4 @@ const mapStateToProps = state => ({
   text: state.text
 });
 
-const mapDispatchToProps = ({
-  changeText
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps)(Header);

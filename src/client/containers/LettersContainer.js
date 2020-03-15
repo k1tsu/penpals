@@ -2,7 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { addLetter } from '../redux/actions';
+import { addLetter } from '../redux/letters/lettersActions';
 import Letter from '../components/Letter/Letter';
 
 const Letters = styled.div`
@@ -24,28 +24,28 @@ const Letters = styled.div`
     }
 `;
 
-const LettersContainer = ({ letters, dispatch }) => (
-  <Letters onClick={() => dispatch(addLetter())}>
-    {
-      letters.reverse().map((letter, index) => (
-        <Letter
-          key={letter.author}
-          first={index === 0}
-          last={index === letters.length - 1}
-          letter={letter}
-        />
-      ))
-    }
-  </Letters>
-);
+const LettersContainer = ({ letters, dispatch }) => {
+  const { items } = letters;
 
-LettersContainer.propTypes = {
-  letters: propTypes.arrayOf(propTypes.object),
-  dispatch: propTypes.func.isRequired
+  return (
+    <Letters onClick={() => dispatch(addLetter())}>
+      {
+        items.map((letter, index) => (
+          <Letter
+            key={letter.author}
+            first={index === 0}
+            last={index === items.length - 1}
+            letter={letter}
+          />
+        ))
+      }
+    </Letters>
+  );
 };
 
-LettersContainer.defaultProps = {
-  letters: []
+LettersContainer.propTypes = {
+  letters: propTypes.arrayOf(propTypes.object).isRequired,
+  dispatch: propTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
