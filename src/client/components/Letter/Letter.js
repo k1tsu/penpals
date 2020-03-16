@@ -1,3 +1,5 @@
+/* eslint-disable no-shadow */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import propTypes from 'prop-types';
 import styled from 'styled-components';
@@ -16,11 +18,9 @@ const StyledLetter = styled.div`
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
     @media (max-width: 1200px) {
-      width: 60vw;
-      
-      @media (min-width: 840px) {
-       width: 20vw;
-      };
+      width: 40vw;
+      margin-left: ${props => (props.first ? '10%' : '2.5%')};
+      margin-right: ${props => (props.last ? '2.5%' : '0')};
     };
 `;
 
@@ -30,7 +30,10 @@ const Letter = ({ first, last, letter }) => {
   const { author } = letter;
 
   return (
-    <StyledLetter first={first} last={last}>
+    <StyledLetter
+      first={first}
+      last={last}
+    >
       <LetterHeader author={author} />
       <LetterBody text={multilinedText} />
     </StyledLetter>

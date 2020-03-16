@@ -14,6 +14,7 @@ const Letters = styled.div`
     width: 100%;
     height: 40%;
     overflow-x: scroll;
+    z-index: 10;
 
     :nth-child(1) {
       margin-left: 10%;

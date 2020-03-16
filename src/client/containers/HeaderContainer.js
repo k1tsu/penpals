@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { string } from 'prop-types';
-import Title from '../components/title/Title';
+import Title from '../components/Title/Title';
 import Subtitle from '../components/Subtitle/Subtitle';
 
 const StyledHeader = styled.header`
@@ -12,7 +12,7 @@ const StyledHeader = styled.header`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background-color: #FFBA60;
+    background-color: ${props => props.styles.primaryColor};
 
     & > * {
       margin: 0;
@@ -20,8 +20,8 @@ const StyledHeader = styled.header`
     }
 `;
 
-const Header = ({ text }) => (
-  <StyledHeader>
+const Header = ({ text, styles }) => (
+  <StyledHeader styles={styles}>
     <Title text={text || 'Good afternoon!'} />
     <Subtitle text="It looks like you have new messages..." />
   </StyledHeader>
@@ -32,7 +32,8 @@ Header.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  text: state.text
+  text: state.text,
+  styles: state.styles
 });
 
 export default connect(mapStateToProps)(Header);

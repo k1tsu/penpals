@@ -9,6 +9,8 @@
     "no-console": "off",
     "comma-dangle": "off",
     "react/jsx-filename-extension": "off",
-    "linebreak-style": 0
+    "linebreak-style": 0,
+    "no-underscore-dangle": 0,
+    "object-curly-newline": 0
   }
 }

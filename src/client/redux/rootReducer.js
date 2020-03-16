@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import letters from './letters/lettersReducer';
+import styles from './styles/stylesReducer';
 
 const reducer = (state = {}, action) => {
   switch (action.type) {
@@ -13,5 +14,6 @@ const reducer = (state = {}, action) => {
 
 export default combineReducers({
   reducer,
-  letters
+  letters,
+  styles
 });
