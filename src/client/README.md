@@ -1,6 +1,6 @@
 ## Front-end 🌞
 
-[Penpals app.](https://github.com/pedrowindisch/penpals) frontend. There are many planned future improvements, including, but not limited to:
+[Penpals app](https://github.com/pedrowindisch/penpals) front-end. There are many planned improvements, including, but not limited to:
 - I18n support.
 - Dark mode.
 - Better resposiveness.
