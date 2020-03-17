@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { withTheme } from 'styled-components';
 import LettersContainer from './containers/LettersContainer';
 import HeaderContainer from './containers/HeaderContainer';
-import FooterContainer from './containers/FooterContainer';
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,7 +14,6 @@ const App = () => (
   <Wrapper>
     <HeaderContainer />
     <LettersContainer />
-    <FooterContainer />
   </Wrapper>
 );
 

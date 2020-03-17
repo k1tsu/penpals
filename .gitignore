@@ -1,6 +1,7 @@
 .vscode
 node_modules
 dist
+.netlify/
 *.log
 yarn.lock
 .env

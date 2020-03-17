@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import store from './redux/store';
 import App from './App';
 import './app.css';
-import Theme from './Theme';
+import Theme from './ThemeProvider';
 
 
 ReactDOM.render((

@@ -7,12 +7,12 @@ import Letter from '../components/Letter/Letter';
 
 const Letters = styled.div`
     position: absolute;
-    align-self: center;
-    justify-self: center;
-    text-align: left;
-    white-space: nowrap;
     width: 100%;
     height: 40%;
+    align-self: center;
+    justify-self: center;
+    white-space: nowrap;
+    text-align: left;
     overflow-x: scroll;
     z-index: 10;
 
