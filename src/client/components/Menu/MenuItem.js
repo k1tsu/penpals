@@ -3,8 +3,8 @@ import styled, { withTheme } from 'styled-components';
 
 const StyledMenuItem = styled.button`
     display: flex;
-    width: 100%;
-    height: 5vh;
+    grid-column: ${props => (props.half ? '1fr' : '1 / -1')};
+    height: 7.5vh;
     justify-content: center;
     align-items: center;
     font-weight: 600;
@@ -21,14 +21,14 @@ const StyledMenuItem = styled.button`
     }
 `;
 
-const MenuItem = ({ children, onClick, ...props }) => {
+const MenuItem = ({ children, onClick, half = false, ...props }) => {
   const handleClick = (e) => {
     e.stopPropagation();
     onClick();
   };
 
   return (
-    <StyledMenuItem onClick={handleClick} {...props}>
+    <StyledMenuItem onClick={handleClick} half={half} {...props}>
       { children }
     </StyledMenuItem>
   );

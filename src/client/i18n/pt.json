@@ -1,0 +1,18 @@
+{
+    "greetings": {
+        "morning": "Bom dia!",
+        "afternoon": "Boa tarde!",
+        "evening": "Boa noite!",
+        "hasLetters": "Parece que você tem cartas novas.",
+        "noLetters": "Opa! Não há cartas novas agora." 
+    },
+    "actions": {
+        "switchColorMode": "Mudar tema",
+        "darkMode": "Modo escuro",
+        "lightMode": "Modo claro",
+        "myProfile": "Meu perfil",
+        "sendLetter": "Enviar uma carta",
+        "aboutUs": "Sobre nós",
+        "changeLanguage": "Mudar idioma"
+    }
+}

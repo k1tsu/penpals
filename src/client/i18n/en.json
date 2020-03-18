@@ -1,0 +1,18 @@
+{
+    "greetings": {
+        "morning": "Good morning!",
+        "afternoon": "Good afternoon!",
+        "evening": "Good evening!",
+        "hasLetters": "Check your new letters.",
+        "noLetters": "Oops... there are no letters right now." 
+    },
+    "actions": {
+        "switchColorMode": "Switch theme",
+        "darkMode": "Dark mode",
+        "lightMode": "Light mode",
+        "myProfile": "My profile",
+        "sendLetter": "Send a letter",
+        "aboutUs": "About us",
+        "changeLanguage": "Change language"
+    }
+}

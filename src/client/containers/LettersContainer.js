@@ -5,6 +5,11 @@ import { connect } from 'react-redux';
 import { addLetter } from '../redux/letters/lettersActions';
 import Letter from '../components/Letter/Letter';
 
+/*
+  This container handles all the Letters components.
+  It's connected to the Redux store.
+*/
+
 const Letters = styled.div`
     position: absolute;
     width: 100%;
