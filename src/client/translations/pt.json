@@ -14,5 +14,10 @@
         "sendLetter": "Enviar uma carta",
         "aboutUs": "Sobre nós",
         "changeLanguage": "Mudar idioma"
+    },
+    "time": {
+        "daysAgo": "{{days}} dias atrás",
+        "hoursAgo": "{{hours}} horas atrás",
+        "minutesAgo": "{{minutes}} minutos atrás"
     }
 }

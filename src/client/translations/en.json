@@ -14,5 +14,10 @@
         "sendLetter": "Send a letter",
         "aboutUs": "About us",
         "changeLanguage": "Change language"
+    },
+    "time": {
+        "daysAgo": "{{days}} days ago",
+        "hoursAgo": "{{hours}} hours ago",
+        "minutesAgo": "{{minutes}} minutes ago"
     }
 }
