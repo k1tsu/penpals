@@ -1,20 +1,19 @@
 import React from 'react';
-import styled, { withTheme } from 'styled-components';
-import LettersContainer from './containers/LettersContainer';
-import HeaderContainer from './containers/HeaderContainer';
-
-const Wrapper = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100%;
-  background-color: ${props => props.theme.secondaryColor};
-`;
+import { Provider } from 'react-redux';
+import { I18nextProvider } from 'react-i18next';
+import Theme from './ThemeProvider';
+import store from './redux/store';
+import i18n from './i18n';
+import Routes from './routes/index';
 
 const App = () => (
-  <Wrapper>
-    <HeaderContainer />
-    <LettersContainer />
-  </Wrapper>
+  <Provider store={store}>
+    <I18nextProvider i18n={i18n}>
+      <Theme>
+        <Routes />
+      </Theme>
+    </I18nextProvider>
+  </Provider>
 );
 
-export default withTheme(App);
+export default App;

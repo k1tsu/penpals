@@ -1,10 +1,12 @@
 {
-    "greetings": {
+    "text": {
+        "hello": "Hello!",
         "morning": "Good morning!",
         "afternoon": "Good afternoon!",
         "evening": "Good evening!",
         "hasLetters": "Check your new letters.",
-        "noLetters": "Oops... there are no letters right now." 
+        "noLetters": "Oops... there are no letters right now.",
+        "loginOrRegister": "Log-in or register." 
     },
     "actions": {
         "switchColorMode": "Switch theme",

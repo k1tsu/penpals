@@ -1,10 +1,12 @@
 {
-    "greetings": {
+    "text": {
+        "hello": "Olá!",
         "morning": "Bom dia!",
         "afternoon": "Boa tarde!",
         "evening": "Boa noite!",
         "hasLetters": "Parece que você tem cartas novas.",
-        "noLetters": "Opa! Não há cartas novas agora." 
+        "noLetters": "Opa! Não há cartas novas agora.",
+        "loginOrRegister": "Entre ou registre-se" 
     },
     "actions": {
         "switchColorMode": "Mudar tema",
