@@ -16,14 +16,12 @@ const LetterSchema = new Schema({
   },
   created_at: {
     type: Date,
-    default: new Date()
+    default: Date.now
   },
   available_at: {
     type: Date
   }
 }, { collection: 'letters' });
-
-// eslint-disable-next-line func-names
 
 const Letter = model('Letter', LetterSchema);
 

@@ -1,24 +1,36 @@
 /* eslint-disable func-names */
-const { Schema, model, Types } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const UserSchema = new Schema({
-  username: String,
+  username: {
+    type: String,
+    required: true
+  },
+  display_name: {
+    type: String,
+    required: true
+  },
   email: String,
-  password: String,
-  sent: [{ type: Types.ObjectId, ref: 'Letter' }],
-  received: [{ type: Types.ObjectId, ref: 'Letter' }]
+  location: {
+    country: {
+      type: String
+    },
+    city: {
+      type: String
+    }
+  },
+  password: String
 }, { collection: 'users' });
 
-UserSchema.statics.getRandomUser = function (senderId, callback) {
-  this.countDocuments().exec((err, count) => {
-    if (err) return callback(err);
-
-    const random = Math.floor(Math.random * count);
-
-    this.findOne({ _id: { $ne: senderId } })
-      .skip(random)
-      .exec(callback);
-  });
+UserSchema.statics.findOrCreate = function (query, done) {
+  const self = this;
+  self.findOne(
+    query, 
+    (err, result) => {
+      return result 
+        ? done(err, result) 
+        : self.create(query, (err, result) => { return done(err, result) })
+    });
 };
 
 const User = model('User', UserSchema);

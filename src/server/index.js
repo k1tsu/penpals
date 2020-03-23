@@ -1,15 +1,28 @@
 const app = require('express')();
 const mongoose = require('mongoose');
-const Letter = require('./models/Letter');
-const User = require('./models/User');
+const routes = require('./routes');
 
-mongoose.connect('mongodb://localhost:27017/penpals', {
+require('dotenv').config;
+
+mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
 
-app.get('/api/test', (req, res) => {
-  
+require('./passport')(app);
+
+app.use('/api', routes);
+
+app.use((err, req, res, next) => {
+  if(!err.statusCode) err.statusCode = 500;
+
+  res.status(err.statusCode)
+    .json(err)
+    .end()
 });
 
-app.listen(process.env.PORT || 8000, '0.0.0.0', () => console.log(`Listening on port ${process.env.PORT || 8000}.`));
+app.listen(
+  process.env.PORT || 8000,
+  '0.0.0.0',
+  () => console.log(`Listening on port ${process.env.PORT || 8000}.`)
+);
