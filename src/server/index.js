@@ -1,24 +1,29 @@
-const app = require('express')();
+const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const routes = require('./routes');
 
-require('dotenv').config;
+const app = express();
 
-mongoose.connect(process.env.MONGODB_URL, {
+app.use(cors());
+
+require('dotenv').config();
+
+app.use('/', express.static('./public'));
+
+mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
 
-require('./passport')(app);
-
 app.use('/api', routes);
 
 app.use((err, req, res, next) => {
-  if(!err.statusCode) err.statusCode = 500;
+  if (!err.statusCode) err.statusCode = 500;
 
   res.status(err.statusCode)
     .json(err)
-    .end()
+    .end();
 });
 
 app.listen(
