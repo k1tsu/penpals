@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="120" height="120" src="https://github.com/pedrowindisch/penpals/blob/master/design/logo/icon/colored/icon.png?raw=true">
+</p>
+
 # PenPals 🤝
 
 This is an app for those who want to make connections and practice languages. Meet a new friend, send digital snail mails and enjoy the experience of sending a letter. 🖊️   
@@ -15,6 +19,8 @@ git clone https://github.com/pedrowindisch/penpals.git
 cd penpals
 npm install
 ```
+
+Don't forget to include your .env file and your Firebase config keys.
 
 ### Starting the development env 👩🏻‍💻
 
