@@ -6,7 +6,7 @@
         "evening": "Boa noite!",
         "hasLetters": "Parece que você tem cartas novas.",
         "noLetters": "Opa! Não há cartas novas agora.",
-        "loginOrRegister": "Entre ou registre-se" 
+        "loginOrRegister": "Entre ou registre-se"
     },
     "actions": {
         "switchColorMode": "Mudar tema",
@@ -15,7 +15,8 @@
         "myProfile": "Meu perfil",
         "sendLetter": "Enviar uma carta",
         "aboutUs": "Sobre nós",
-        "changeLanguage": "Mudar idioma"
+        "changeLanguage": "Mudar idioma",
+        "logIn": "Fazer log-in"
     },
     "time": {
         "daysAgo": "{{days}} dias atrás",

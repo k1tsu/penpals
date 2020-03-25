@@ -15,7 +15,8 @@
         "myProfile": "My profile",
         "sendLetter": "Send a letter",
         "aboutUs": "About us",
-        "changeLanguage": "Change language"
+        "changeLanguage": "Change language",
+        "logIn": "Log in"
     },
     "time": {
         "daysAgo": "{{days}} days ago",
