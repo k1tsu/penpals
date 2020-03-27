@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import letters from './letters/lettersReducer';
-import theme from './theme/themeReducer';
+import letters from './reducers/lettersReducer';
+import theme from './reducers/themeReducer';
+import auth from './reducers/authReducer';
 
 export default combineReducers({
   letters,
-  theme
+  theme,
+  auth
 });
