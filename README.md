@@ -2,6 +2,9 @@
   <img width="120" height="120" src="https://github.com/pedrowindisch/penpals/blob/master/design/logo/icon/colored/icon.png?raw=true">
 </p>
 
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/pedrowindisch/penpals.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/pedrowindisch/penpals/alerts/)
+  [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/pedrowindisch/penpals.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/pedrowindisch/penpals/context:javascript)
+
 # PenPals 🤝
 
 This is an app for those who want to make connections and practice languages. Meet a new friend, send digital snail mails and enjoy the experience of sending a letter. 🖊️   
