@@ -2,8 +2,7 @@ import {
   FETCH_LETTERS_BEGIN,
   FETCH_LETTERS_SUCCESS,
   FETCH_LETTERS_FAILURE,
-  ADD_LETTER,
-  SET_CURRENT_LETTER
+  ADD_LETTER
 } from '../actions/lettersActions';
 
 const initialState = {
@@ -14,7 +13,6 @@ const initialState = {
 };
 
 const lettersReducer = (state = initialState, action) => {
-  console.log(action.payload)
   switch (action.type) {
     case ADD_LETTER:
       return {

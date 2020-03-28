@@ -4,8 +4,6 @@ export const FETCH_LETTERS_BEGIN = 'FETCH_LETTERS_BEGIN';
 export const FETCH_LETTERS_SUCCESS = 'FETCH_LETTERS_SUCCESS';
 export const FETCH_LETTERS_FAILURE = 'FETCH_LETTERS_FAILURE';
 
-export const SET_CURRENT_LETTER = 'SET_CURRENT_LETTER';
-
 export const ADD_LETTER = 'ADD_LETTER';
 
 export const addLetter = () => ({
@@ -27,12 +25,11 @@ export const fetchLettersFailure = error => ({
 });
 
 export const fetchReceivedLetters = () => (dispatch) => {
-  console.log('test')
   dispatch(fetchLettersBegin);
   const { currentUser } = firebase.auth();
 
-  fetch(`http://localhost:8000/api/letters?receiver=${currentUser.uid}`)
+  fetch(`http://localhost:8000/api/letters?receiver=${currentUser.uid}`) // not working yet.
     .then(data => data.json())
     .then(letters => dispatch(fetchLettersSuccess(letters)))
-    .catch(err => fetchLettersFailure(err))
+    .catch(err => fetchLettersFailure(err));
 };
