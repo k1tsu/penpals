@@ -2,14 +2,15 @@ import React from 'react';
 import Letter from '../Letter/Letter';
 import LettersWrapper from './styles';
 
-const Letters = ({ letters: { items } }) => (
+const Letters = ({ letters }) => (
   <LettersWrapper>
+    <Letter initial first />
     {
-      items.map((letter, index) => (
+      letters.items.map((letter, index) => (
         <Letter
+          onClick={ () => window.location.pathname = letter._id }
           key={letter.author}
-          first={index === 0}
-          last={index === items.length - 1}
+          last={index === letters.items.length - 1}
           letter={letter}
         />
       ))

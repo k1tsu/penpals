@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledMenuItem } from './styles';
+import StyledMenu from './styles';
 
 const MenuItem = ({ children, onClick, link = false, half = false, ...props }) => {
   const active = window.location.pathname.startsWith(link);
@@ -14,14 +14,14 @@ const MenuItem = ({ children, onClick, link = false, half = false, ...props }) =
   };
 
   return (
-    <StyledMenuItem
+    <StyledMenu.Item
       onClick={handleClick}
       half={half}
       active={active}
       {...props}
     >
       { children }
-    </StyledMenuItem>
+    </StyledMenu.Item>
   );
 };
 

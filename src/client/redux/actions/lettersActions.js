@@ -24,11 +24,10 @@ export const fetchLettersFailure = error => ({
   payload: error
 });
 
-export const fetchReceivedLetters = () => (dispatch) => {
+export const fetchReceivedLetters = userUid => async (dispatch) => {
   dispatch(fetchLettersBegin);
-  const { currentUser } = firebase.auth();
 
-  fetch(`http://localhost:8000/api/letters?receiver=${currentUser.uid}`) // not working yet.
+  fetch(`http://localhost:8000/api/letters/user/${userUid}`) // not working yet.
     .then(data => data.json())
     .then(letters => dispatch(fetchLettersSuccess(letters)))
     .catch(err => fetchLettersFailure(err));

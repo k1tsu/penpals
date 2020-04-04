@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import styled, { withTheme } from 'styled-components';
+import { connect } from 'react-redux';
+import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 import Wrapper from './styles';
 import Header from '../components/Header/Header';
@@ -17,14 +18,14 @@ const TextWrapper = styled.div`
   }
 `;
 
-const CurrentLetter = ({ theme }) => {
-  const [letter, setLetter] = useState({ text: '' });
+const CurrentLetter = (props) => {
+  const [letter, setLetter] = useState({ text: '', title: '' });
   const { letterId } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:8000/api/letters?id=${letterId}`)
+    fetch(`http://localhost:8000/api/letters/${letterId}`)
       .then(data => data.json())
-      .then(data => setLetter(data[0]));
+      .then(data => setLetter(data));
   }, []);
 
   return (
@@ -46,4 +47,9 @@ const CurrentLetter = ({ theme }) => {
   );
 };
 
-export default withTheme(CurrentLetter);
+const mapStateToProps = state => ({
+  theme: state.theme,
+  user: state.auth.user
+});
+
+export default connect(mapStateToProps)(CurrentLetter);

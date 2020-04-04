@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { switchTheme } from '../../redux/theme/themeActions';
+import { switchTheme } from '../../redux/actions/themeActions';
 import Title from '../Title/Title';
 import Subtitle from '../Subtitle/Subtitle';
 import Logo from '../Logo/Logo';
@@ -13,12 +13,12 @@ import StyledHeader from './styles';
   Handles all the header components.
 */
 
-const Header = ({ theme, dispatch, title, subtitle }) => {
+const Header = ({ theme, dispatch, title, subtitle, small = false }) => {
   const [visible, setVisible] = useState(false);
   const { t, i18n } = useTranslation();
 
   return (
-    <StyledHeader theme={theme}>
+    <StyledHeader theme={theme} small={small}>
       <Logo />
       <HeaderMenu
         visible={visible}
@@ -28,7 +28,7 @@ const Header = ({ theme, dispatch, title, subtitle }) => {
         t={sentence => t(sentence)}
       />
       <Title text={title} />
-      <Subtitle text={subtitle} />
+      { !small && <Subtitle text={subtitle} /> }
     </StyledHeader>
   );
 };

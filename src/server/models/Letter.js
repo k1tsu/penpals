@@ -2,17 +2,25 @@ const { Schema, model, Types } = require('mongoose');
 
 const LetterSchema = new Schema({
   author: {
-    type: Types.ObjectId,
-    ref: 'User',
-    required: true
+    uid: {
+      type: String,
+      required: true
+    },
+    display_name: {
+      type: String,
+      required: true
+    }
   },
   text: {
     type: String,
     required: true
   },
+  title: {
+    type: String,
+    required: true
+  },
   receiver: {
-    type: Types.ObjectId,
-    ref: 'User'
+    type: String
   },
   created_at: {
     type: Date,

@@ -6,12 +6,8 @@ import Letters from '../components/Letters/Letters';
 import Wrapper from './styles';
 import { fetchReceivedLetters } from '../redux/actions/lettersActions';
 
-const Home = ({ letters }) => {
+const Home = ({ letters, auth, dispatch }) => {
   const { t } = useTranslation();
-
-  useEffect(() => {
-    fetchReceivedLetters();
-  }, []);
 
   return (
     <Wrapper>
@@ -26,7 +22,8 @@ const Home = ({ letters }) => {
 
 const mapStateToProps = state => ({
   theme: state.theme,
-  letters: state.letters
+  letters: state.letters,
+  auth: state.auth
 });
 
 export default connect(mapStateToProps)(Home);

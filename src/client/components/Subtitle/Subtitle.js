@@ -13,7 +13,11 @@ const StyledSubtitle = styled.h2`
     }
 `;
 
-const Subtitle = ({ text }) => <StyledSubtitle children={text} />;
+const Subtitle = ({ text, children }) => (
+  <StyledSubtitle>
+    { text ? text : children }
+  </StyledSubtitle>
+);
 
 Subtitle.propTypes = {
   text: string.isRequired
