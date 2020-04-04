@@ -7,8 +7,8 @@ import {
 
 const colors = {
   light: {
-    primaryColor: '#FFBA60',
-    secondaryColor: '#F6F8FA',
+    primaryColor: '#ECECEC',
+    secondaryColor: '#ECECEC',
     modalBackgroundColor: '#FFFFFF',
     primaryTextColor: '#000000',
     secondaryTextColor: '#515151',
@@ -16,8 +16,8 @@ const colors = {
     darkMode: false
   },
   dark: {
-    primaryColor: '#1C1C1C',
-    secondaryColor: '#222222',
+    primaryColor: '#000',
+    secondaryColor: '#000',
     modalBackgroundColor: '#222222',
     primaryTextColor: '#FFFFFF',
     secondaryTextColor: '#C0C0C0',

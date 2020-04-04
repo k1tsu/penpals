@@ -11,12 +11,10 @@ const StyledTitle = styled.h1`
     }
 `;
 
-const Title = ({ text }) => (
+const Title = ({ text, children }) => (
   <StyledTitle>
-    { text }
+    { text || children }
   </StyledTitle>
 );
-
-Title.propTypes = { text: string.isRequired };
 
 export default withTheme(Title);

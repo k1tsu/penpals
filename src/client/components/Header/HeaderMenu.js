@@ -1,13 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Menu from '../Menu/Menu';
 import MenuItem from '../Menu/MenuItem';
 
-const HeaderMenu = ({ visible, setVisible, switchTheme, changeLanguage, t }) => (
+const HeaderMenu = ({ visible, setVisible, switchTheme, changeLanguage, t, auth }) => (
   <Menu visible={visible} setVisible={setVisible}>
-    <MenuItem link="/profile">
-      { t('actions.myProfile') }
+    <MenuItem link={auth.isAuthenticated ? '/' : '/login'}>
+      {
+        auth.isAuthenticated
+          ? t('actions.alreadyLoggedIn')
+          : t('actions.logIn')
+      }
     </MenuItem>
-    <MenuItem link="/send-letter">
+    <MenuItem>
       { t('actions.sendLetter') }
     </MenuItem>
     <MenuItem link="/about-us">
@@ -25,4 +30,8 @@ const HeaderMenu = ({ visible, setVisible, switchTheme, changeLanguage, t }) => 
   </Menu>
 );
 
-export default HeaderMenu;
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(mapStateToProps)(HeaderMenu);

@@ -1,16 +1,5 @@
 import styled from 'styled-components';
 
-const StyledLetterText = styled.h3`
-    margin: 0;
-    margin-left: 5%;
-    margin-right: 2.5%;
-    font-family: 'Inter', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 400;
-    font-size: ${props => (props.author ? '0.9em' : '0.7em')};
-    white-space: ${props => (props.author ? 'nowrap' : 'normal')};
-    word-wrap: break-word;
-`;
-
 const StyledLetter = styled.div`
     display: inline-block;
     cursor: pointer;
@@ -29,29 +18,36 @@ const StyledLetter = styled.div`
     };
 `;
 
-const StyledLetterBody = styled.div`
+StyledLetter.Text = styled.h3`
+    margin: 0;
+    margin-left: 5%;
+    margin-right: 2.5%;
+    font-family: 'Inter', --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: ${props => (props.author ? '0.9em' : '0.7em')};
+    white-space: ${props => (props.author ? 'nowrap' : 'normal')};
+    word-wrap: break-word;
+`;
+
+StyledLetter.Body = styled.div`
+    display: flex;
+    justify-content: ${props => (props.center ? 'center' : 'flex-start')};
+    align-items: ${props => (props.center ? 'center' : 'flex-start')};;
     position: relative;
     padding-top: 2.5%;
     width: 100%;
-    height: 80%; 
+    height: ${props => (props.center ? '95%' : '80%')}; 
     overflow-y: hidden;
+    text-align: ${props => (props.center ? 'center' : 'left')};
 
-    &::after {
-      content: '';
-      width:inherit;
-      height:100%;    
-      position:absolute;
-      left:0;
-      top:0;
-      background:linear-gradient(transparent 150px, white);
-    }
 `;
 
-const StyledLetterHeader = styled.div`
+StyledLetter.Header = styled.div`
     display: flex;
     align-items: center;
     width: 100%;
     height: 15%;
+    margin-top: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -61,9 +57,4 @@ const StyledLetterHeader = styled.div`
     border-bottom: 1px solid #DDDDDD;
 `;
 
-export {
-  StyledLetterText,
-  StyledLetterBody,
-  StyledLetterHeader,
-  StyledLetter
-};
+export default StyledLetter;

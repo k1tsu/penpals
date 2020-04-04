@@ -73,9 +73,8 @@ export const verifyAuth = () => (dispatch) => {
     .auth()
     .onAuthStateChanged((user) => {
       if (user) {
-        console.log(user);
         dispatch(receiveLogin(user));
-        dispatch(fetchReceivedLetters());
+        dispatch(fetchReceivedLetters(user.uid))
       }
 
       dispatch(verifySuccess());

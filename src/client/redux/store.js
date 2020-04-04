@@ -10,6 +10,4 @@ const store = createStore(
 
 store.dispatch(verifyAuth());
 
-console.log(store.getState());
-
 export default store;
