@@ -4,7 +4,8 @@ import {
   Route,
   Switch
 } from "react-router-dom";
-import Home from "./Home.jsx";
+import Home from "./Home";
+import NotFound from "./NotFound";
 import { Sidebar } from "../components";
 
 const Routes = () => (
@@ -14,7 +15,7 @@ const Routes = () => (
       <Route exact path="/">
         <Home />
       </Route>
-      <Route render={() => (<h2>test</h2>)} />
+      <Route component={NotFound} />
     </Switch>
   </Router>
 );
