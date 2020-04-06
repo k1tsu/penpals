@@ -4,9 +4,7 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import Home from './Home';
-import LoginPage from './LoginPage';
-import CurrentLetter from './CurrentLetter';
+import { Home } from '.';
 
 const Routes = () => (
   <Router>
@@ -14,15 +12,12 @@ const Routes = () => (
       <Route exact path="/">
         <Home />
       </Route>
-      <Route exact path="/login">
-        <LoginPage />
-      </Route>
-      <Route exact path="/:letterId">
-        <CurrentLetter />
-      </Route>
       <Route render={() => (<h2>test</h2>)} /> 
     </Switch>
   </Router>
-);
+); 
+
+// the switch element catches all the routes that arent defined, so e.g. someone
+// access /myprofile it i'll just render a <h2>text</h2>
 
 export default Routes;
