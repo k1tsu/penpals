@@ -8,11 +8,26 @@ class Sidebar extends React.Component {
   state = {
     isCollapsed: false
   };
+
+  collapseAll = state => {
+    let isCollapsed = undefined;
+    if (this.state.isCollapsed) {
+      isCollapsed = false;
+      this.setState({ isCollapsed });
+    } else {
+      isCollapsed = true;
+    }
+    this.setState({ isCollapsed });
+  };
+
   render() {
     return (
       <SidebarWrapper>
         <Profile collapsed={this.state.isCollapsed} />
-        <CurtainArrow />
+        <CurtainArrow
+          collapsed={this.state.isCollapsed}
+          onCollapse={this.collapseAll}
+        />
         <Buttons collapsed={this.state.isCollapsed} />
       </SidebarWrapper>
     );
