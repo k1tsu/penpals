@@ -27,7 +27,13 @@ Don't forget to include your .env file and your Firebase config keys.
 
 ### Starting the development env 👩🏻‍💻
 
-Please assure your CWD is your local repo folder. ⚒ Then, start the server by running the following commands:
+Please assure your CWD is your local repo folder. 
+
+As we're using Firebase, you'll need to set it up. 
+- Add a firebase.json file on the src/server folder with your Firebase Admin SDK keys.
+- Add a firebase.js file on the src/client/firebase folder with your Firebase JS SDK keys.
+
+⚒ Then, start the server by running the following commands:
 
 ```
 npm run dev 
