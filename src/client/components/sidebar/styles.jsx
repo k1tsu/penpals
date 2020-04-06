@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const SidebarWrapper = styled.div`
-  display: flex;
+  background-color: white;
 `;
 export const ButtonWrapper = styled.div`
   margin-top: 100px;
@@ -38,5 +38,13 @@ ProfileWrapper.Name = styled.span`
   vertical-align: middle;
   font-size: 20px;
 `;
+
+export const ArrowWrapper = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+`;
+
+ArrowWrapper.Icon = styled.p``;
 
 export default SidebarWrapper;
