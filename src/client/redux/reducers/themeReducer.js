@@ -26,7 +26,7 @@ const colors = {
   }
 }
 
-const themeReducer = (state = { ...colors.dark }, action) => { 
+const themeReducer = (state = { ...colors.light }, action) => { 
   const newTheme = state.darkMode ? 'light' : 'dark';
 
   switch (action.type) {
