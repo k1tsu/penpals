@@ -1,12 +1,15 @@
 import React from "react";
-import { Wrapper, ContentWrapper } from "./styles.jsx";
-import { Sidebar, Title, Description } from "../components";
+import { Wrapper, ContentWrapper } from "./styles";
+import { Title, Description } from "../components";
 
 const Home = () => (
   <Wrapper vertical>
     <ContentWrapper width="50%">
-      <Title> Check your new letters </Title>
-      <Description> CHECK THEM OUT > </Description>
+      <Title> You have new letters </Title>
+      <Description> CHECK THEM OUT &gt; </Description>
+    </ContentWrapper>
+    <ContentWrapper width="50%">
+
     </ContentWrapper>
   </Wrapper>
 );
