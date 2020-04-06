@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-const SidebarWrapper = styled.div`
-  background-color: white;
-`;
+const SidebarWrapper = styled.div``;
 export const ButtonWrapper = styled.div`
   margin-top: 100px;
   display: flex;
@@ -43,8 +41,13 @@ export const ArrowWrapper = styled.div`
   position: absolute;
   bottom: 0;
   width: 100vw;
+  background-color: #fff;
+  text-align: left;
 `;
 
-ArrowWrapper.Icon = styled.p``;
+ArrowWrapper.Icon = styled.h1`
+  margin: 10px;
+  cursor: pointer;
+`;
 
 export default SidebarWrapper;
