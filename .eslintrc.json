@@ -8,6 +8,7 @@
   "rules": {
     "no-console": "off",
     "comma-dangle": "off",
+    "quotes": [2, "double", { "avoidEscape": true }],
     "react/jsx-filename-extension": "off",
     "linebreak-style": 0,
     "no-underscore-dangle": 0,
