@@ -1,9 +1,7 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import styled from 'styled-components';
-import Header from '../components/Header/Header';
-import Wrapper from './styles';
-import LoginForm from '../components/LoginForm/LoginForm';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import styled from "styled-components";
+import Wrapper from "./styles";
 
 const LoginFormWrapper = styled.div`
   display: flex;
@@ -19,7 +17,7 @@ const LoginPage = () => {
 
   return (
     <Wrapper flexDirection="column">
-      <Header title={t('text.loginOrRegister')} />
+      <Header title={t("text.loginOrRegister")} />
       <LoginFormWrapper>
         <LoginForm />
       </LoginFormWrapper>
