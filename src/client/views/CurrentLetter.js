@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
-import styled from 'styled-components';
-import { useParams } from 'react-router-dom';
-import Wrapper from './styles';
-import Header from '../components/Header/Header';
+import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import styled from "styled-components";
+import { useParams } from "react-router-dom";
+import Wrapper from "./styles";
 
 const TextWrapper = styled.div`
   display: flex;
@@ -18,8 +17,8 @@ const TextWrapper = styled.div`
   }
 `;
 
-const CurrentLetter = (props) => {
-  const [letter, setLetter] = useState({ text: '', title: '' });
+const CurrentLetter = props => {
+  const [letter, setLetter] = useState({ text: "", title: "" });
   const { letterId } = useParams();
 
   useEffect(() => {
@@ -33,14 +32,12 @@ const CurrentLetter = (props) => {
       <Header title={letter.title} subtitle={`From ${letter.author}`} small />
       <TextWrapper>
         <p>
-          {
-            letter.text.split('\\n').map(item => (
-              <>
-                {item}
-                <br />
-              </>
-            ))
-          }
+          {letter.text.split("\\n").map(item => (
+            <>
+              {item}
+              <br />
+            </>
+          ))}
         </p>
       </TextWrapper>
     </Wrapper>
