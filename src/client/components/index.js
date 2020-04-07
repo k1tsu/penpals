@@ -1,6 +1,6 @@
-import Sidebar from "./sidebar/Sidebar.jsx";
-import Title from "./title/Title.jsx";
-import Description from "./description/Description.jsx";
+import Sidebar from "./sidebar/Sidebar";
+import Title from "./title/Title";
+import Description from "./description/Description";
 
 export {
   Sidebar,

@@ -7,17 +7,23 @@ import {
 import Home from "./Home";
 import NotFound from "./NotFound";
 import { Sidebar } from "../components";
+import { Grid } from "./styles";
+import { connect } from "react-redux";
 
-const Routes = () => (
+const Routes = ({ theme }) => (
   <Router>
-    <Sidebar />
-    <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route component={NotFound} />
-    </Switch>
+    <Grid collapsed={theme.collapsed}>
+      <Sidebar />
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route component={NotFound} />
+      </Switch>
+    </Grid>
   </Router>
 );
 
-export default Routes;
+export default connect(state => ({
+  theme: state.theme
+}))(Routes);
