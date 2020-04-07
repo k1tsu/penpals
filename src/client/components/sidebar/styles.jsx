@@ -1,11 +1,18 @@
 import styled from "styled-components";
 
-const SidebarWrapper = styled.div``;
-export const ButtonWrapper = styled.div`
-  margin-top: 100px;
+const SidebarWrapper = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  float: left;
+  justify-content: space-between;
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 60vh;
 `;
 
 ButtonWrapper.Item = styled.button`
@@ -20,14 +27,16 @@ ButtonWrapper.Item = styled.button`
 `;
 
 export const ProfileWrapper = styled.div`
-  margin: 15px;
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
+  height: 10vh;
 `;
 
 ProfileWrapper.Image = styled.img`
-  vertical-align: middle;
   border-radius: 50%;
+  margin-left: 15px;
   width: 30px;
   height: 30px;
 `;
@@ -38,15 +47,18 @@ ProfileWrapper.Name = styled.span`
 `;
 
 export const ArrowWrapper = styled.div`
-  position: absolute;
-  bottom: 0;
-  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+  height: 5vh;
+  margin-bottom: 5vh;
   background-color: #fff;
   text-align: left;
 `;
 
 ArrowWrapper.Icon = styled.h1`
-  margin: 10px;
+  margin-right: 15px;
   cursor: pointer;
 `;
 
