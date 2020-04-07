@@ -8,6 +8,7 @@ class CurtainArrow extends React.Component {
         <ArrowWrapper.Icon
           style={{ marginLeft: this.directionMarginChange() }}
           onClick={() => this.props.onCollapse()}
+          className="curtainarrow"
         >
           {" "}
           {this.directionString()}{" "}

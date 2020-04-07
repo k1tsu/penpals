@@ -16,6 +16,7 @@ export const ButtonWrapper = styled.div`
 `;
 
 ButtonWrapper.Item = styled.button`
+  transition: transform 0.4s ease-in-out;
   background-color: Transparent;
   background-repeat: no-repeat;
   border: none;
@@ -24,6 +25,11 @@ ButtonWrapper.Item = styled.button`
   outline: none;
   margin: 15px;
   font-size: 20px;
+
+  &:hover {
+    transform: scale(1.3);
+    -webkit-transition: transform 0.4s ease-in-out;
+  }
 `;
 
 export const ProfileWrapper = styled.div`
