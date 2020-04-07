@@ -53,6 +53,7 @@ That's all! 💪🏽 Now you can open [http://localhost:3000](http://localhost:3
 
 - **Pedro H. Windisch** - _concept, design and first steps_ - [@pedrowindisch](https://github.com/pedrowindisch)
 - **Pierre G. Montelle** - [@k1tsu](https://github.com/k1tsu)
+- **Mickey E. Mickey** - [@mickeyeng](https://github.com/mickeyeng)
 
 See also the list of [contributors](https://github.com/pedrowindisch/penpals/contributors) to see who participated in this project.
 

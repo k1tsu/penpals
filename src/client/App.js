@@ -4,7 +4,7 @@ import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n";
 import Theme from "./ThemeProvider";
 import store from "./redux/store";
-import Routes from "./views/routes.jsx";
+import Routes from "./views/routes";
 import GlobalStyles from "./GlobalStyles";
 
 const App = () => (

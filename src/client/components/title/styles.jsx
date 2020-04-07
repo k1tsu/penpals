@@ -5,6 +5,7 @@ const Text = styled.h1`
   margin-left: 5%;
   font-family: 'Inter';
   color: #000;
-`
+  text-align: left;
+`;
 
 export default Text;
