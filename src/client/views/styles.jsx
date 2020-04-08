@@ -3,16 +3,14 @@ import styled from "styled-components";
 const Grid = styled.div`
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: ${props => (props.collapsed ? "5vw" : "15vw")} 1fr;
-  grid-template-rows: 100vh;
+  background-color: #ececec;
+  display: flex;
 `;
 
 const Wrapper = styled.div`
   top: 0;
-  margin: 0;
+  margin-left: 10%;
   display: flex;
-  grid-column: 2 / 3;
   height: 100%;
   justify-content: ${props => (props.horizontal ? "center" : null)};
   align-items: ${props => (props.vertical ? "center" : null)};
@@ -29,8 +27,4 @@ const ContentWrapper = styled.div`
   align-items: flex-start;
 `;
 
-export {
-  ContentWrapper,
-  Wrapper,
-  Grid
-};
+export { ContentWrapper, Wrapper, Grid };

@@ -5,11 +5,7 @@ class CurtainArrow extends React.Component {
   render() {
     return (
       <ArrowWrapper>
-        <ArrowWrapper.Icon
-          style={{ marginLeft: this.directionMarginChange() }}
-          onClick={() => this.props.onCollapse()}
-          className="curtainarrow"
-        >
+        <ArrowWrapper.Icon onClick={() => this.props.onCollapse()}>
           {" "}
           {this.directionString()}{" "}
         </ArrowWrapper.Icon>
@@ -21,13 +17,6 @@ class CurtainArrow extends React.Component {
       return "→";
     } else {
       return "←";
-    }
-  }
-  directionMarginChange() {
-    if (this.props.collapsed) {
-      return "0%";
-    } else {
-      return "10%";
     }
   }
 

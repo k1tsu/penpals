@@ -1,30 +1,33 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const SidebarWrapper = styled.div`
-  width: 100%;
+  ${props => (props.collapsed ? "width: 5vw;" : "width: 15vw;")}
+  transition: width 1s;
   height: 100%;
   display: flex;
+  background-color: white;
   flex-direction: column;
-  justify-content: space-between;
+  overflow: hidden;
 `;
 
 export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 60vh;
+  height: 100%;
+  overflow: hidden;
 `;
 
 ButtonWrapper.Item = styled.button`
-  transition: transform 0.4s ease-in-out;
+  -webkit-transition: transform 0.4s ease-in-out;
   background-color: Transparent;
   background-repeat: no-repeat;
   border: none;
   cursor: pointer;
-  overflow: hidden;
   outline: none;
   margin: 15px;
   font-size: 20px;
+  white-space: pre;
 
   &:hover {
     transform: scale(1.3);
@@ -53,13 +56,12 @@ ProfileWrapper.Name = styled.span`
 `;
 
 export const ArrowWrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  width: 100%;
   height: 5vh;
   margin-bottom: 5vh;
-  background-color: #fff;
   text-align: left;
 `;
 

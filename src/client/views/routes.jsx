@@ -1,10 +1,6 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch
-} from "react-router-dom";
-import Home from "./Home";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./Home.jsx";
 import NotFound from "./NotFound";
 import { Sidebar } from "../components";
 import { Grid } from "./styles";

@@ -24,8 +24,8 @@ class Sidebar extends React.Component {
     this.collapseAll = this.collapseAll.bind(this);
   }
 
-  collapseAll = (state) => {
-    const isCollapsed = this.props.theme.collapsed
+  collapseAll = state => {
+    const isCollapsed = this.props.theme.collapsed;
 
     if (isCollapsed) {
       // this is a Redux action that will send a 'message' to our store saying to collapse the menu.
@@ -38,7 +38,7 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <SidebarWrapper>
+      <SidebarWrapper collapsed={this.props.theme.collapsed}>
         <Profile collapsed={this.props.theme.collapsed} />
         <Buttons collapsed={this.props.theme.collapsed} />
         <CurtainArrow
