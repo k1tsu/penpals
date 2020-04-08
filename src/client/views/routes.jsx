@@ -14,7 +14,6 @@ const Routes = ({ theme }) => (
         <Route exact path="/">
           <Home />
         </Route>
-        <Route component={NotFound} />
       </Switch>
     </Grid>
   </Router>
