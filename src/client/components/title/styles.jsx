@@ -1,11 +1,19 @@
 import styled from "styled-components";
+import { Frame } from 'framer';
 
-const Text = styled.h1`
+const TextWrapper = styled.div`
+  height: 29px;
+  overflow: hidden;
   font-size: 27.5px;
-  margin-left: 5%;
-  font-family: 'Inter';
-  color: #000;
-  text-align: left;
 `;
 
-export default Text;
+const Text = styled.h1`
+  font-family: 'Inter', sans-serif;
+  font-size: 27.5px;
+  color: black;
+`
+
+export { 
+  TextWrapper,
+  Text
+};
