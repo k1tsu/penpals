@@ -1,6 +1,7 @@
 import React from "react";
-import { Text, TextWrapper } from "./styles";
 import { Frame } from "framer";
+import { Text, TextWrapper } from "./styles";
+import { withTheme } from "styled-components";
 
 /**
  * This element will render a 15px, monospaced text.
@@ -22,4 +23,4 @@ const Description = ({ children }) => (
   </TextWrapper>
 );
 
-export default Description;
+export default withTheme(Description);

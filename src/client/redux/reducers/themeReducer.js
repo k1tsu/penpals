@@ -9,21 +9,17 @@ import {
 
 const colors = {
   light: {
-    primaryColor: "#ECECEC",
-    secondaryColor: "#ECECEC",
-    modalBackgroundColor: "#FFFFFF",
-    primaryTextColor: "#000000",
-    secondaryTextColor: "#515151",
-    hoverBackgroundColor: "#E5E5E5",
+    menuBackground: "#FFF",
+    textPrimary: "#000",
+    textSecondary: "#000",
+    appBackground: "#ECECEC",
     darkMode: false
   },
   dark: {
-    primaryColor: "#000",
-    secondaryColor: "#000",
-    modalBackgroundColor: "#222222",
-    primaryTextColor: "#FFFFFF",
-    secondaryTextColor: "#C0C0C0",
-    hoverBackgroundColor: "#E5E5E5",
+    menuBackground: "#212121",
+    textPrimary: "#FFF",
+    textSecondary: "#FFF",
+    appBackground: "#121212",
     darkMode: true
   }
 };
