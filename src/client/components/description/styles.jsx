@@ -10,8 +10,8 @@ const TextWrapper = styled.div`
 const Text = styled.h3`
   font-family: 'IBM Plex Mono', monospace;
   font-size: 15px;
-  margin: 0;
   text-align: left;
+  color: ${props => props.theme.textSecondary}
 `;
 
 export {

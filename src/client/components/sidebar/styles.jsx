@@ -1,11 +1,11 @@
 import styled, { css } from "styled-components";
 
 const SidebarWrapper = styled.div`
-  ${props => (props.collapsed ? "width: 5vw;" : "width: 15vw;")}
+  ${props => (props.theme.collapsed ? "width: 5vw;" : "width: 15vw;")}
   transition: width 1s;
   height: 100%;
   display: flex;
-  background-color: white;
+  background-color: ${props => props.theme.menuBackground};
   flex-direction: column;
   overflow: hidden;
 `;
@@ -16,6 +16,10 @@ export const ButtonWrapper = styled.div`
   flex-direction: column;
   height: 100%;
   overflow: hidden;
+  
+  & > button {
+    color: ${props => props.theme.textPrimary}
+  };
 `;
 
 ButtonWrapper.Item = styled.button`
@@ -53,6 +57,7 @@ ProfileWrapper.Name = styled.span`
   margin-left: 18px;
   vertical-align: middle;
   font-size: 20px;
+  color: ${props => props.theme.textPrimary}
 `;
 
 export const ArrowWrapper = styled.div`
