@@ -38,7 +38,7 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <SidebarWrapper collapsed={this.props.theme.collapsed}>
+      <SidebarWrapper theme={this.props.theme}>
         <Profile collapsed={this.props.theme.collapsed} />
         <Buttons collapsed={this.props.theme.collapsed} />
         <CurtainArrow

@@ -1,6 +1,7 @@
 import React from "react";
 import { Frame } from "framer";
 import { TextWrapper, Text } from "./styles";
+import { withTheme } from "styled-components";
 
 /**
  * This element will render a 30px, sans-serif text.
@@ -27,4 +28,4 @@ const Title = ({ children }) => {
   );
 };
 
-export default Title;
+export default withTheme(Title);

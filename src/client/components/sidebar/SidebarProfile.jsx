@@ -1,7 +1,12 @@
 import React from "react";
 import SidebarWrapper, { ProfileWrapper } from "./styles";
+import { withTheme } from "styled-components";
 
 class Profile extends React.Component {
+  constructor(props) {
+    super(props);
+  };
+
   render() {
     return (
       <ProfileWrapper>
@@ -12,9 +17,9 @@ class Profile extends React.Component {
   }
   collapseProfile() {
     if (this.props.collapsed === false) {
-      return <ProfileWrapper.Name> Test </ProfileWrapper.Name>;
+      return <ProfileWrapper.Name theme={this.props.theme}> Test </ProfileWrapper.Name>;
     }
   }
 }
 
-export default Profile;
+export default withTheme(Profile);

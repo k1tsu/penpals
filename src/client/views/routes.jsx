@@ -11,7 +11,7 @@ import { LetterView } from "../components";
 
 const Routes = ({ theme }) => (
   <Router>
-    <Grid collapsed={theme.collapsed}>
+    <Grid theme={theme}>
       <BrowserView>
         <Sidebar />
       </BrowserView>
