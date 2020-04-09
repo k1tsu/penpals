@@ -7,6 +7,7 @@ import { Sidebar } from "../components";
 import { NavbarMobile } from "../components";
 import { Grid } from "./styles";
 import { connect } from "react-redux";
+import { LetterView } from "../components";
 
 const Routes = ({ theme }) => (
   <Router>
@@ -21,7 +22,9 @@ const Routes = ({ theme }) => (
         <Route exact path="/">
           <Home />
         </Route>
-        <Route component={NotFound} />
+        <Route path="/:id">
+          <LetterView />
+        </Route>
       </Switch>
     </Grid>
   </Router>
