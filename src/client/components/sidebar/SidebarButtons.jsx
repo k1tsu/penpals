@@ -8,71 +8,44 @@ import { switchTheme } from "../../redux/actions/themeActions";
 // We can do a functional component the following way:
 
 function Buttons({ theme, dispatch, ...props }) {
-  // this is your old state
   const buttonNames = [
     "Letters",
     "Send a new letter",
     "Dark Theme",
     "+ Send a letter"
-  ]
+  ];
 
-  const buttonNamesCollapsed = [
-    "📥", 
-    "📧", 
-    "🌑", 
-    "🆕"
-  ]
-  
-  // this is your function 
+  const buttonActions = [null, null, () => dispatch(switchTheme()), null];
+
+  const buttonNamesCollapsed = ["📥", "📧", "🌑", "🆕"];
+
   const collapseButtons = () => {
-    // we don't need the 'this' keyword anymore with functional components
-    if(props.collapsed === true) {
+    if (props.collapsed === true) {
       return buttonNamesCollapsed.map(name => (
-        <ButtonWrapper.Item onClick={() => dispatch(switchTheme())} key={name}> {name} </ButtonWrapper.Item>
-      ))
+        <ButtonWrapper.Item
+          onClick={buttonActions[buttonNamesCollapsed.indexOf(name)]}
+          key={name}
+        >
+          {" "}
+          {name}{" "}
+        </ButtonWrapper.Item>
+      ));
     } else {
       return buttonNames.map(name => (
-        <ButtonWrapper.Item key={name}> {name} </ButtonWrapper.Item>
-      ))
+        <ButtonWrapper.Item
+          key={name}
+          onClick={buttonActions[buttonNames.indexOf(name)]}
+        >
+          {" "}
+          {name}{" "}
+        </ButtonWrapper.Item>
+      ));
     }
-  }
+  };
 
-  // return, in this case, is just like render()
-  return (
-    <ButtonWrapper theme={theme}>
-      { collapseButtons() }
-    </ButtonWrapper>
-  )
+  return <ButtonWrapper theme={theme}>{collapseButtons()}</ButtonWrapper>;
 }
 
-/* class Buttons extends React.Component {
-  state = {
-    buttonNames: [
-      "Letters",
-      "Send a new letter",
-      "Dark Theme",
-      "+ Send a letter"
-    ],
-    buttonNamesCollapsed: ["📥", "📧", "🌑", "🆕"]
-  };
-  render() {
-    return <ButtonWrapper>{this.collapseButtons()}</ButtonWrapper>;
-  }
-  collapseButtons() {
-    if (this.props.collapsed === true) {
-      return this.state.buttonNamesCollapsed.map(name => (
-        <ButtonWrapper.Item key={name}> {name} </ButtonWrapper.Item>
-      ));
-    } else if (this.props.collapsed === false) {
-      return this.state.buttonNames.map(name => (
-        <ButtonWrapper.Item key={name}> {name} </ButtonWrapper.Item>
-      ));
-    }
-  }
-} */
-
-// This function will connect this component to the app state
-// and also a 'dispatch' function.
 const mapStateToProps = state => ({
   theme: state.theme
 });
